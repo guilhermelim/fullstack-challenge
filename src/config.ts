@@ -5,7 +5,7 @@ dotenv.config();
 export const APOLLO_SERVER_PORT = process.env.APOLLO_SERVER_PORT || 4000;
 export const MONGODB_URI: string =
   process.env.MONGODB_URI ||
-  "MONGODB_URI=mongodb://root:root@localhost:27017/cotabox?authSource=admin";
+  "mongodb://root:secret@localhost:27017/cotabox?authSource=admin";
 
 const defaultConfig = {
   APOLLO_SERVER_PORT,

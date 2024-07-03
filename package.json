@@ -2,17 +2,27 @@
   "name": "api-graphql-exemple",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "dev": "tsnd --respawn --transpile-only src/server.ts",
-    "build": "tsc",
-    "start": "node .dist/server.js"
-  },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "author": "guilhermelim",
+  "license": "MIT",
+  "description": "Get started quickly with a GraphQL API and an integrated front-end.",
+  "bugs": {
+    "url": "https://github.com/guilhermelim/fullstack-challenge/issues"
+  },
+  "homepage": "https://github.com/guilhermelim/fullstack-challenge#readme",
+  "scripts": {
+    "build": "tsc",
+    "start": "node .dist/server.js",
+    "dev": "tsnd --respawn --transpile-only src/server.ts",
+    "dev:auto": "ts-node dev-services-control.ts",
+    "services:up": "docker compose -f src/infra/compose.yaml up -d",
+    "services:stop": "docker compose -f src/infra/compose.yaml stop",
+    "services:down": "docker compose -f src/infra/compose.yaml down"
+  },
   "devDependencies": {
+    "@types/shelljs": "^0.8.15",
     "dotenv": "^16.4.5",
+    "shelljs": "^0.8.5",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.5.3"
   },
