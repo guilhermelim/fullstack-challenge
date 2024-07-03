@@ -1,5 +1,6 @@
 import { ApolloServer } from "apollo-server";
 import "reflect-metadata";
+
 import { APOLLO_SERVER_PORT } from "./config";
 import buildGraphQLSchema from "./graphql/schemas";
 
