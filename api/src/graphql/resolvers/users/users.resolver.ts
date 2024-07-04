@@ -1,4 +1,4 @@
-import dbConnect from "../../../infra/dbConnect";
+import database from "../../../infra/database";
 import { Resolver, Query, Mutation, Arg, ID } from "type-graphql";
 import UserModel, { IUser } from "../../../infra/models/users";
 import { User, UserInput } from "../../typedefs/users";
@@ -8,7 +8,7 @@ export class UserResolver {
   @Query(() => [User])
   async users(): Promise<IUser[]> {
     try {
-      await dbConnect();
+      await database.connect();
       const users = await UserModel.find();
       return users;
     } catch (err: any) {
@@ -19,7 +19,7 @@ export class UserResolver {
   @Query(() => User, { nullable: true })
   async user(@Arg("id", () => ID) id: string): Promise<IUser | null> {
     try {
-      await dbConnect();
+      await database.connect();
       const user = await UserModel.findById(id);
       return user;
     } catch (err: any) {
@@ -30,7 +30,7 @@ export class UserResolver {
   @Mutation(() => User)
   async addUser(@Arg("input") input: UserInput): Promise<IUser> {
     try {
-      await dbConnect();
+      await database.connect();
       const newUser = await UserModel.create(input);
       return newUser;
     } catch (err: any) {
@@ -44,7 +44,7 @@ export class UserResolver {
     @Arg("input") input: UserInput
   ): Promise<IUser | null> {
     try {
-      await dbConnect();
+      await database.connect();
       const updatedUser = await UserModel.findByIdAndUpdate(id, input, {
         new: true,
       });
@@ -57,7 +57,7 @@ export class UserResolver {
   @Mutation(() => User, { nullable: true })
   async deleteUser(@Arg("id", () => ID) id: string): Promise<IUser | null> {
     try {
-      await dbConnect();
+      await database.connect();
       const deletedUser = await UserModel.findByIdAndDelete(id);
       return deletedUser;
     } catch (err: any) {

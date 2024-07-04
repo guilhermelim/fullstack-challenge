@@ -16,12 +16,19 @@
     "dev:auto": "ts-node dev-services-control.ts",
     "services:up": "docker compose -f src/infra/compose.yaml up -d",
     "services:stop": "docker compose -f src/infra/compose.yaml stop",
-    "services:down": "docker compose -f src/infra/compose.yaml down"
+    "services:down": "docker compose -f src/infra/compose.yaml down",
+    "test": "jest",
+    "test:watch": "jest --watchAll"
   },
   "devDependencies": {
+    "@types/jest": "^29.5.12",
     "@types/shelljs": "^0.8.15",
+    "@types/supertest": "^6.0.2",
     "dotenv": "^16.4.5",
+    "jest": "^29.7.0",
     "shelljs": "^0.8.5",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.1.5",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.5.3"
   },
