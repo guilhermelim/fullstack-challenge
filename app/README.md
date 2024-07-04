@@ -1,48 +1,71 @@
-# Material UI - Next.js Pages Router example in TypeScript
+# Fullstack Challenge
 
-## How to use
+## Descrição
 
-Download the example [or clone the repo](https://github.com/mui/material-ui):
+O Fullstack Challenge é um projeto que oferece uma solução completa para desenvolvedores interessados em iniciar rapidamente com uma API GraphQL e um front-end integrado.
 
-<!-- #default-branch-switch -->
+## Dependências do Projeto
 
-```bash
-curl https://codeload.github.com/mui/material-ui/tar.gz/next | tar -xz --strip=2  material-ui-next/examples/material-ui-nextjs-pages-router-ts
-cd material-ui-nextjs-pages-router-ts
-```
+- [NVM - Node Version Manager](https://github.com/nvm-sh/nvm): O NVM é uma ferramenta que gerencia as versões do Node.js em seu ambiente de desenvolvimento. Ele garante que estamos utilizando a versão específica do [Node.js](https://nodejs.org) definida no arquivo `.nvmrc` do projeto.
+- [Docker](https://www.docker.com): O Docker é uma plataforma que permite aos desenvolvedores criar, testar e implantar aplicativos rapidamente, garantindo que eles sejam executados da mesma forma em diferentes ambientes.
+- [Docker Compose](https://docs.docker.com/compose): O Docker Compose é uma ferramenta para definir e executar aplicativos Docker de vários contêineres. Com o Compose, é possível usar um arquivo YAML para configurar os serviços de sua aplicação.
 
-Install it and run:
+## Configuração do Ambiente
 
-```bash
-npm install
-npm run dev
-```
+Antes de iniciar o projeto, certifique-se de ter as seguintes ferramentas instaladas em sua máquina:
 
-or:
+- Node.js: Versão especificada no arquivo `.nvmrc`
+- npm: Gerenciador de pacotes do Node.js
+- Docker: Para iniciar e gerenciar o container do banco de dados MongoDB
+- Docker Compose: Para simplificar o gerenciamento dos contêineres da aplicação.
 
-<!-- #default-branch-switch -->
+## Iniciando o Projeto
 
-[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/mui/material-ui/tree/next/examples/material-ui-nextjs-pages-router-ts)
+1. Instale a versão especificada do Node.js utilizando o NVM:
 
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/sandbox/github/mui/material-ui/tree/next/examples/material-ui-nextjs-pages-router-ts)
+   ```
+   nvm install
+   ```
 
-## The idea behind the example
+2. Instale as dependências do projeto utilizando npm:
 
-**Note:** This example is set up to use the Next.js Pages Router.
-As of Next.js 13.4, the newer App Router pattern is stable.
-We recommend starting new projects with the [Material UI with Next.js (App Router) example](https://github.com/mui/material-ui/tree/next/examples/material-ui-nextjs-ts) unless you need (or prefer) the Pages Router.
+   ```
+   npm install
+   ```
 
-The project uses [Next.js](https://github.com/vercel/next.js), which is a framework for server-rendered React apps.
-It includes `@mui/material` and its peer dependencies, including [Emotion](https://emotion.sh/docs/introduction), the default style engine in Material UI v5. If you prefer, you can [use styled-components instead](https://next.mui.com/material-ui/integrations/interoperability/#styled-components).
+4. Inicie o projeto em modo de desenvolvimento:
 
-## The link component
+   ```
+   npm run dev
+   ```
 
-The [example folder](https://github.com/mui/material-ui/tree/HEAD/examples/material-ui-nextjs-pages-router-ts) provides an adapter for the use of [Next.js's Link component](https://nextjs.org/docs/pages/api-reference/components/link) with Material UI.
-More information [in the documentation](https://next.mui.com/material-ui/integrations/routing/#next-js-pages-router).
+Para rodar o projeto em produção é obrigatório criar o arquivo `.env.local`. Você pode rodar o comado `cp .env.development .env.local` para obter a configuração padrão das variáveis de ambiente.
 
-## What's next?
+## Contribuindo
 
-<!-- #default-branch-switch -->
+Sinta-se à vontade para contribuir com novas funcionalidades, correções de bugs ou melhorias para o projeto. Basta seguir estas etapas:
 
-You now have a working example project.
-You can head back to the documentation and continue by browsing the [templates](https://next.mui.com/material-ui/getting-started/templates/) section.
+1. Faça um fork do repositório e clone-o em sua máquina local.
+2. Crie uma branch para sua contribuição:
+
+   ```
+   git checkout -b minha-contribuicao
+   ```
+
+3. Faça suas alterações e faça commit delas:
+
+   ```
+   git commit -m "Minha contribuição"
+   ```
+
+4. Envie suas alterações para o seu fork:
+
+   ```
+   git push origin minha-contribuicao
+   ```
+
+5. Abra um Pull Request no repositório original.
+
+## Licença
+
+Este projeto é licenciado sob a [MIT License](LICENSE).
