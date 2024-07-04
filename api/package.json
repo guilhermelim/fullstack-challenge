@@ -1,7 +1,6 @@
 {
-  "name": "api-graphql-exemple",
+  "name": "api",
   "version": "1.0.0",
-  "main": "index.js",
   "keywords": [],
   "author": "guilhermelim",
   "license": "MIT",

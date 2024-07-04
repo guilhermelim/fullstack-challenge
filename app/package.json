@@ -1,7 +1,13 @@
 {
-  "name": "material-ui-nextjs-pages-router-ts",
-  "version": "5.0.0",
-  "private": true,
+  "name": "app",
+  "version": "1.0.0",
+  "description": "Get started quickly with a GraphQL API and an integrated front-end.",
+  "author": "guilhermelim",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/guilhermelim/fullstack-challenge/issues"
+  },
+  "homepage": "https://github.com/guilhermelim/fullstack-challenge#readme",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
