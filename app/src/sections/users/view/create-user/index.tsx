@@ -1,37 +1,15 @@
-import * as yup from "yup";
+import { AppBar, Box, Toolbar, Container, Stack } from "@mui/material";
+import { LoadingButton } from "@mui/lab";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 
 import FormProvider, { RHFTextField } from "@/components/hook-form";
+import { defaultValues, validationSchema } from "./validation";
+import { useUsers } from "../../context/UsersContext";
 
-import {
-  AppBar,
-  Box,
-  Toolbar,
-  Button,
-  Container,
-  Stack,
-  TextField,
-} from "@mui/material";
-import { LoadingButton } from "@mui/lab";
+export default function CreateUser() {
+  const { graphql } = useUsers();
 
-const defaultValues = {
-  firstName: "",
-  lastName: "",
-  participation: 100,
-};
-
-const validationSchema = yup.object({
-  firstName: yup.string().required("The `firstName` field is required."),
-  lastName: yup.string().required("The `lastName` field is required."),
-  participation: yup
-    .number()
-    .required("The `participation` field is required.")
-    .positive("The `participation` field is required.")
-    .integer(),
-});
-
-export default function UsersForm() {
   const methods = useForm({
     mode: "onTouched",
     resolver: yupResolver(validationSchema),
@@ -40,15 +18,12 @@ export default function UsersForm() {
   });
 
   const {
-    watch,
     handleSubmit,
-    formState: { errors, isSubmitting },
+    formState: { isSubmitting },
   } = methods;
 
-  const values = watch();
-
   const onSubmit = (values: any) => {
-    console.log("values: ", values);
+    graphql.handleAddUser(values);
   };
 
   return (
